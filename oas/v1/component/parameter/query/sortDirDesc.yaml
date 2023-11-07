@@ -1,0 +1,5 @@
+name: sort_dir_desc
+in: query
+description: Is sorting desc
+schema:
+  type: boolean

@@ -1,0 +1,8 @@
+name: page_token
+in: query
+description: Page index token
+schema:
+  type: integer
+  format: int64
+  default: 0
+  minimum: 0

@@ -1,0 +1,8 @@
+apis:
+  petStore@v1:
+    root: oas/v1/petStore.yaml
+  teamStore@v1:
+    root: oas/v1/teamStore.yaml
+
+extends:
+  - recommended

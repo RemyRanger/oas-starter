@@ -1,0 +1,55 @@
+get:
+  tags:
+    - Team
+  summary: List Teams
+  description: List all Teams with pagination.
+  operationId: ListTeams
+  parameters:
+    - $ref: '../../component/parameter/query/orderBy.yaml'
+    - $ref: '../../component/parameter/query/pageSize.yaml'
+    - $ref: '../../component/parameter/query/pageToken.yaml'
+    - $ref: '../../component/parameter/query/sortDirDesc.yaml'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            description: Teams fetched
+            items:
+              $ref: '../../component/schema/team/teamOut.yaml'
+            maxItems: 100
+    '400':
+      $ref: '../../component/error/400_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'
+
+post:
+  tags:
+    - Team
+  summary: Create Team
+  description: Create a Team in database.
+  operationId: CreateTeam
+  requestBody:
+    description: Team to create
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../component/schema/team/teamIn.yaml'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../../component/schema/team/teamOut.yaml'
+    '400':
+      $ref: '../../component/error/400_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'

@@ -1,0 +1,65 @@
+parameters:
+  - $ref: '../../component/parameter/path/id.yaml'
+
+get:
+  tags:
+    - Category
+  summary: Get Category
+  description: Returns a Category based on a single ID
+  operationId: GetCategory
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../../component/schema/category/categoryOut.yaml'
+    '404':
+      $ref: '../../component/error/404_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'
+
+put:
+  tags:
+    - Category
+  summary: Update Category
+  description: Update a Category based on a single ID
+  operationId: UpdateCategory
+  requestBody:
+    description: Body
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../component/schema/category/categoryIn.yaml'
+  responses:
+    '204':
+      description: Successful operation - No content
+    '400':
+      $ref: '../../component/error/400_Error.yaml'
+    '404':
+      $ref: '../../component/error/404_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'
+
+delete:
+  tags:
+    - Category
+  summary: Delete Category
+  description: Delete a Category based on a single ID.
+  operationId: DeleteCategory
+  responses:
+    '204':
+      description: Successful operation - No content
+    '400':
+      $ref: '../../component/error/400_Error.yaml'
+    '404':
+      $ref: '../../component/error/404_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'

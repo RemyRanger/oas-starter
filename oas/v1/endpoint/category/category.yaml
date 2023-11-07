@@ -1,0 +1,50 @@
+get:
+  tags:
+    - Category
+  summary: List Categories
+  description: List all Categories.
+  operationId: ListCategories
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            description: Teams fetched
+            items:
+              $ref: '../../component/schema/category/categoryOut.yaml'
+            maxItems: 100
+    '400':
+      $ref: '../../component/error/400_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'
+
+post:
+  tags:
+    - Category
+  summary: Create Category
+  description: Create a Category in database.
+  operationId: CreateCategory
+  requestBody:
+    description: Team to create
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../component/schema/category/categoryIn.yaml'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../../component/schema/team/teamOut.yaml'
+    '400':
+      $ref: '../../component/error/400_Error.yaml'
+    '500':
+      $ref: '../../component/error/500_Error.yaml'
+    '503':
+      $ref: '../../component/error/503_Error.yaml'

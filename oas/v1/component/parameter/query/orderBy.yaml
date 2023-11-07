@@ -1,0 +1,5 @@
+name: order_by
+in: query
+description: Field to order by
+schema:
+  type: string

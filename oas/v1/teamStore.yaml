@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  x-logo:
+    url: https://cdn1.sportngin.com/attachments/photo/2b29-144289100/Sentry_team_store_large.png
+  title: API TeamStore
+  description: |-
+    API TeamStore
+
+    # Authentication
+
+    Token JWT - Authentication needs a provided token
+
+    <!-- ReDoc-Inject: <security-definitions> -->
+  termsOfService: https://example-api.com/
+  contact:
+    name: John Doe
+    email: john.doe@gmail.com
+    url: https://example-api.com/
+  version: 0.1.0
+  license:
+    name: 'John Doe'
+    url: https://example-api.com/
+servers:
+  - url: 'https://api-{env}.example-api.com/v1/teamstore'
+    description: ci/staging APIs URL.
+    variables:
+      env:
+        description: environment
+        default: staging
+        enum:
+          - ci
+          - staging
+
+paths:
+  '/healthcheck':
+    $ref: ./endpoint/healthcheck/healthcheck.yaml
+    
+  '/member':
+    $ref: ./endpoint/member/member.yaml
+  '/member/{id}':
+    $ref: ./endpoint/member/member@id.yaml
+
+  '/team':
+    $ref: ./endpoint/team/team.yaml
+  '/team/{id}':
+    $ref: ./endpoint/team/team@id.yaml
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
+externalDocs:
+  description: Documentation
+  url: https://example-documentation.com/

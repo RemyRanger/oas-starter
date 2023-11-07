@@ -1,0 +1,17 @@
+type: object
+required:
+  - name
+  - status
+properties:
+  name:
+    type: string
+    description: Pet name
+    example: 'Saint Bernard'
+  status:
+    description: Pet status
+    type: string
+    default: AVAILABLE
+    enum:
+      - AVAILABLE
+      - PENDING
+      - SOLD
