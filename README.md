@@ -34,8 +34,7 @@ Managing API documentation as code promotes collaboration and maintainability. H
 ### Prerequisites
 
 - **Node.js** (v16 or later)
-- **npm** (or **yarn**)
-- A **GitHub repository** for hosting the project and deploying to GitHub Pages.
+- **yarn**
 
 ### Installation
 
