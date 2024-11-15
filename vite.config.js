@@ -12,6 +12,7 @@ function getBaseUrl(env) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: getBaseUrl(process.env.NODE_ENV),
   define: {
     '__APP_BASE_URL__': `"${getBaseUrl(process.env.NODE_ENV)}"`,
   },
