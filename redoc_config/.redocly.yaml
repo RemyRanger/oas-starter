@@ -1,0 +1,17 @@
+extends:
+  - recommended-strict
+
+plugins:
+  - decorators/code-snippets.cjs
+
+decorators:
+  code-snippets/add:
+    targets: [shell_curl,java_unirest,go_native,php_http2,python_python3,node_native]
+
+rules:
+  no-empty-servers: off
+
+apis:
+  sxc-control@v1:
+    root: ../oas/sxc-control.yaml
+    output: ../oas/dist/sxc-control.yaml

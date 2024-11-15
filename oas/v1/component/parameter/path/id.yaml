@@ -1,8 +1,0 @@
-name: id
-in: path
-description: Unique ID
-required: true
-schema:
-  type: integer
-  format: int64
-  example: 123456
